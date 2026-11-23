@@ -1,0 +1,59 @@
+# Control texts for conditions B, D and E.
+
+# Condition B: generic checklist (observation instruction, no species knowledge).
+generic_checklist: |
+  Before deciding, inspect the bird carefully:
+  - Bill: shape, size and color.
+  - Head: crown color and stripes, eyebrow, eye stripe, eyering, cheek, lores.
+  - Throat and whisker area: color and any dark marks.
+  - Breast, flanks and belly: color, streaks, spots or bands.
+  - Back and wings: color, streaking, wingbars.
+  - Tail: length, shape and any white edges.
+  Compare these details against every candidate before choosing.
+
+# Condition D: length-matched irrelevant notes. For every species, D replaces each
+# feature sentence with a sentence from this pool (assigned deterministically and
+# trimmed/padded to within +-15% of the original length). The pool describes
+# everyday objects, so it carries no information about birds.
+irrelevant_pool:
+  - "A ceramic mug keeps tea warm for a few minutes after it is poured"
+  - "Wooden pencils are usually painted yellow and have a small eraser on top"
+  - "A folding umbrella has thin metal ribs that open into a circular canopy"
+  - "Paper clips are made from a single piece of steel wire bent into loops"
+  - "Most bicycle tires are filled with air through a narrow valve stem"
+  - "A wall clock shows the hour with a short hand and minutes with a long hand"
+  - "Glass jars with screw lids are often used to store dry pasta and rice"
+  - "A standard brick is rectangular and is laid in rows held by mortar"
+  - "Rubber bands stretch to several times their resting length before snapping"
+  - "Spiral notebooks have a coiled wire binding along the left edge"
+  - "A kitchen sponge has one soft side and one rough scrubbing side"
+  - "Copper pipes carry water through many older buildings"
+  - "Cardboard boxes are folded from a single flat sheet and taped shut"
+  - "A desk lamp has an adjustable arm that bends at two joints"
+  - "Plastic buttons are sewn onto shirts through two or four small holes"
+  - "A stapler pushes a thin metal staple through stacked sheets of paper"
+  - "Concrete sidewalks are poured in slabs separated by shallow joints"
+  - "A computer keyboard arranges letter keys in three staggered rows"
+  - "Wool socks are knitted from yarn spun out of sheep fleece"
+  - "A garden hose is coiled on a reel when it is not in use"
+  - "Metal spoons conduct heat quickly when left in hot soup"
+  - "A chalkboard is cleaned with a felt eraser or a damp cloth"
+  - "Most door keys are cut from brass and have a row of notches"
+  - "A shoelace has small plastic tips called aglets at each end"
+  - "Bread loaves are sliced with a long knife that has a serrated edge"
+  - "A light switch turns a circuit on and off with a small lever"
+  - "Ice cubes are frozen in plastic trays with square compartments"
+  - "A wooden ruler is marked in centimeters along one edge"
+  - "Stamps are stuck to the upper right corner of an envelope"
+  - "A frying pan has a flat base and a long handle on one side"
+
+# Condition E: misleading notes. For each pair, the first `n_swap` features of the
+# two species' notes are exchanged; the remaining features stay correct.
+# Pairs were chosen a priori as visually similar species with different key marks.
+swap_pairs:
+  - [S04, S05]   # Chipping <-> Clay-colored
+  - [S15, S12]   # Song <-> Lincoln
+  - [S18, S19]   # White-crowned <-> White-throated
+  - [S11, S13]   # Le Conte <-> Nelson
+  - [S14, S17]   # Savannah <-> Vesper
+n_swap: 2

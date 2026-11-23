@@ -1,0 +1,35 @@
+[project]
+name = "kgbr"
+version = "0.1.0"
+description = "Can domain knowledge guide visual evidence used in bird recognition? (EECS 442 project)"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.7",
+    "torchvision",
+    "transformers>=4.57",
+    "accelerate",
+    "pillow",
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "pyyaml",
+    "tqdm",
+    "huggingface_hub",
+    "tabulate",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

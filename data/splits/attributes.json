@@ -1,0 +1,173 @@
+{
+  "rule": "Select attributes from DEV annotations only, and write a knowledge check report.\n\n    Rule: candidates = CUB attributes referenced by the species notes. Rank them by the\n    between-class standard deviation of their positive rate on dev images (certainty >= 3)\n    among the 20 species and keep the top `max_attrs`.",
+  "attributes": [
+    {
+      "aid": "A01",
+      "cub_id": 7,
+      "name": "has_bill_shape::all-purpose",
+      "text": "bill shape: all purpose",
+      "between_class_std": 0.192
+    },
+    {
+      "aid": "A02",
+      "cub_id": 8,
+      "name": "has_bill_shape::cone",
+      "text": "bill shape: cone",
+      "between_class_std": 0.2114
+    },
+    {
+      "aid": "A03",
+      "cub_id": 55,
+      "name": "has_breast_pattern::solid",
+      "text": "breast pattern: solid",
+      "between_class_std": 0.2773
+    },
+    {
+      "aid": "A04",
+      "cub_id": 57,
+      "name": "has_breast_pattern::striped",
+      "text": "breast pattern: striped",
+      "between_class_std": 0.2283
+    },
+    {
+      "aid": "A05",
+      "cub_id": 60,
+      "name": "has_back_color::brown",
+      "text": "back color: brown",
+      "between_class_std": 0.1245
+    },
+    {
+      "aid": "A06",
+      "cub_id": 76,
+      "name": "has_tail_shape::notched_tail",
+      "text": "tail shape: notched tail",
+      "between_class_std": 0.1458
+    },
+    {
+      "aid": "A07",
+      "cub_id": 92,
+      "name": "has_upper_tail_color::white",
+      "text": "upper tail color: white",
+      "between_class_std": 0.1493
+    },
+    {
+      "aid": "A08",
+      "cub_id": 103,
+      "name": "has_head_pattern::eyeline",
+      "text": "head pattern: eyeline",
+      "between_class_std": 0.121
+    },
+    {
+      "aid": "A09",
+      "cub_id": 104,
+      "name": "has_head_pattern::striped",
+      "text": "head pattern: striped",
+      "between_class_std": 0.1717
+    },
+    {
+      "aid": "A10",
+      "cub_id": 107,
+      "name": "has_breast_color::brown",
+      "text": "breast color: brown",
+      "between_class_std": 0.1911
+    },
+    {
+      "aid": "A11",
+      "cub_id": 111,
+      "name": "has_breast_color::grey",
+      "text": "breast color: grey",
+      "between_class_std": 0.1853
+    },
+    {
+      "aid": "A12",
+      "cub_id": 118,
+      "name": "has_breast_color::white",
+      "text": "breast color: white",
+      "between_class_std": 0.151
+    },
+    {
+      "aid": "A13",
+      "cub_id": 120,
+      "name": "has_breast_color::buff",
+      "text": "breast color: buff",
+      "between_class_std": 0.1883
+    },
+    {
+      "aid": "A14",
+      "cub_id": 126,
+      "name": "has_throat_color::grey",
+      "text": "throat color: grey",
+      "between_class_std": 0.1767
+    },
+    {
+      "aid": "A15",
+      "cub_id": 132,
+      "name": "has_throat_color::black",
+      "text": "throat color: black",
+      "between_class_std": 0.1731
+    },
+    {
+      "aid": "A16",
+      "cub_id": 133,
+      "name": "has_throat_color::white",
+      "text": "throat color: white",
+      "between_class_std": 0.1664
+    },
+    {
+      "aid": "A17",
+      "cub_id": 188,
+      "name": "has_nape_color::grey",
+      "text": "nape color: grey",
+      "between_class_std": 0.1593
+    },
+    {
+      "aid": "A18",
+      "cub_id": 210,
+      "name": "has_belly_color::white",
+      "text": "belly color: white",
+      "between_class_std": 0.1463
+    },
+    {
+      "aid": "A19",
+      "cub_id": 214,
+      "name": "has_wing_shape::pointed-wings",
+      "text": "wing shape: pointed wings",
+      "between_class_std": 0.1097
+    },
+    {
+      "aid": "A20",
+      "cub_id": 239,
+      "name": "has_back_pattern::striped",
+      "text": "back pattern: striped",
+      "between_class_std": 0.1396
+    },
+    {
+      "aid": "A21",
+      "cub_id": 289,
+      "name": "has_bill_color::orange",
+      "text": "bill color: orange",
+      "between_class_std": 0.1443
+    },
+    {
+      "aid": "A22",
+      "cub_id": 295,
+      "name": "has_crown_color::brown",
+      "text": "crown color: brown",
+      "between_class_std": 0.1952
+    },
+    {
+      "aid": "A23",
+      "cub_id": 305,
+      "name": "has_crown_color::black",
+      "text": "crown color: black",
+      "between_class_std": 0.2539
+    },
+    {
+      "aid": "A24",
+      "cub_id": 306,
+      "name": "has_crown_color::white",
+      "text": "crown color: white",
+      "between_class_std": 0.1441
+    }
+  ]
+}

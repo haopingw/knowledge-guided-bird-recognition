@@ -1,0 +1,189 @@
+# Condition C: species identification notes.
+# Each species has 3-5 short, VISIBLE field marks (no range, song or migration),
+# paraphrased from Cornell Lab "All About Birds" ID pages (source URL per species)
+# and checked against CUB dev-split annotations (see results/knowledge_check.md).
+# `cub_attrs` maps a feature to CUB attribute ids; `key_part` is the single most
+# diagnostic part, used ONLY offline to build the occlusion experiment.
+# Feature order matters: the first two features are the ones swapped in condition E.
+version: 1
+species:
+  S01:
+    name: American Pipit
+    source: https://www.allaboutbirds.org/guide/American_Pipit/id
+    key_part: beak
+    features:
+      - {text: "Thin, pointed, warbler-like bill, not a thick seed-eating cone", parts: [beak], cub_attrs: [4, 7]}
+      - {text: "Plain gray-brown back with little or no streaking", parts: [nape], cub_attrs: [237]}
+      - {text: "Buffy underparts with fine streaks on the breast", parts: [breast], cub_attrs: [57, 120]}
+      - {text: "Pale eyebrow and pale eyering on a plain face", parts: [crown], cub_attrs: [100]}
+  S02:
+    name: Baird Sparrow
+    source: https://www.allaboutbirds.org/guide/Bairds_Sparrow/id
+    key_part: breast
+    features:
+      - {text: "Necklace of short black streaks across a pale upper breast", parts: [breast], cub_attrs: [57]}
+      - {text: "Ochre-buff face and broad ochre central crown stripe", parts: [crown], cub_attrs: [104]}
+      - {text: "Two thin dark whisker marks on each side of the throat", parts: [throat], cub_attrs: [96]}
+      - {text: "Scaly-looking back with buff feather edges", parts: [nape], cub_attrs: [239]}
+  S03:
+    name: Brewer Sparrow
+    source: https://www.allaboutbirds.org/guide/Brewers_Sparrow/id
+    key_part: crown
+    features:
+      - {text: "Finely streaked brown crown with no pale central stripe", parts: [crown], cub_attrs: [295]}
+      - {text: "Crisp complete white eyering on a plain gray-brown face", parts: [crown], cub_attrs: [101]}
+      - {text: "Plain, unstreaked pale gray breast", parts: [breast], cub_attrs: [55, 111]}
+      - {text: "Overall very plain and pale, with a small pinkish bill", parts: [beak], cub_attrs: [8]}
+  S04:
+    name: Chipping Sparrow
+    source: https://www.allaboutbirds.org/guide/Chipping_Sparrow/id
+    key_part: crown
+    features:
+      - {text: "Bright rusty-red cap on the crown", parts: [crown], cub_attrs: [298, 105]}
+      - {text: "Black eye stripe running from the bill through the eye", parts: [crown], cub_attrs: [103]}
+      - {text: "Clean white eyebrow above the eye stripe", parts: [crown], cub_attrs: [100]}
+      - {text: "Plain, unstreaked pale gray breast and nape", parts: [breast, nape], cub_attrs: [55, 111]}
+  S05:
+    name: Clay colored Sparrow
+    source: https://www.allaboutbirds.org/guide/Clay-colored_Sparrow/id
+    key_part: crown
+    features:
+      - {text: "Brown crown with a thin pale central stripe", parts: [crown], cub_attrs: [104, 295]}
+      - {text: "Brown cheek patch outlined in dark, with pale lores (no black line before the eye)", parts: [crown], cub_attrs: [100]}
+      - {text: "Contrasting plain gray nape", parts: [nape], cub_attrs: [188]}
+      - {text: "Unstreaked buffy-white breast", parts: [breast], cub_attrs: [55, 120]}
+  S06:
+    name: House Sparrow
+    source: https://www.allaboutbirds.org/guide/House_Sparrow/id
+    key_part: throat
+    features:
+      - {text: "Male: black bib on the throat and upper breast", parts: [throat], cub_attrs: [132]}
+      - {text: "Male: gray crown with chestnut sides of the head and nape", parts: [crown, nape], cub_attrs: [299, 187]}
+      - {text: "Female: plain buff-brown with a pale buffy stripe behind the eye", parts: [crown], cub_attrs: [100]}
+      - {text: "Thick conical bill; back streaked black and buff", parts: [beak], cub_attrs: [8, 239]}
+  S07:
+    name: Field Sparrow
+    source: https://www.allaboutbirds.org/guide/Field_Sparrow/id
+    key_part: beak
+    features:
+      - {text: "Bright pink bill", parts: [beak], cub_attrs: [288]}
+      - {text: "Plain gray face with a bold white eyering", parts: [crown], cub_attrs: [101]}
+      - {text: "Rusty crown and a thin rusty line behind the eye", parts: [crown], cub_attrs: [298]}
+      - {text: "Unstreaked buffy-gray breast", parts: [breast], cub_attrs: [55]}
+  S08:
+    name: Grasshopper Sparrow
+    source: https://www.allaboutbirds.org/guide/Grasshopper_Sparrow/id
+    key_part: breast
+    features:
+      - {text: "Plain, unstreaked buffy breast (adults)", parts: [breast], cub_attrs: [55, 120]}
+      - {text: "Flat head with a pale central crown stripe", parts: [crown], cub_attrs: [104]}
+      - {text: "Yellow-orange spot between the eye and the bill", parts: [crown], cub_attrs: []}
+      - {text: "Large flat-looking bill and short, spiky tail", parts: [beak, tail], cub_attrs: [8]}
+  S09:
+    name: Harris Sparrow
+    source: https://www.allaboutbirds.org/guide/Harriss_Sparrow/id
+    key_part: throat
+    features:
+      - {text: "Black crown, face and bib (breeding) or black blotches on throat and breast", parts: [throat, crown], cub_attrs: [132, 305]}
+      - {text: "Bright pink bill", parts: [beak], cub_attrs: [288]}
+      - {text: "Gray or tan cheeks around the black face", parts: [crown], cub_attrs: []}
+      - {text: "Large sparrow with whitish belly and streaked flanks", parts: [breast], cub_attrs: [210]}
+  S10:
+    name: Henslow Sparrow
+    source: https://www.allaboutbirds.org/guide/Henslows_Sparrow/id
+    key_part: nape
+    features:
+      - {text: "Olive-green head and nape", parts: [nape, crown], cub_attrs: [190]}
+      - {text: "Rusty-red wings", parts: [nape], cub_attrs: [14]}
+      - {text: "Fine dark streaks across a buffy breast and flanks", parts: [breast], cub_attrs: [57]}
+      - {text: "Large pale bill and short tail", parts: [beak, tail], cub_attrs: [8]}
+  S11:
+    name: Le Conte Sparrow
+    source: https://www.allaboutbirds.org/guide/LeContes_Sparrow/id
+    key_part: nape
+    features:
+      - {text: "Bright orange-buff face and eyebrow framing a gray cheek", parts: [crown], cub_attrs: [100]}
+      - {text: "Pinkish-chestnut nape with fine streaks", parts: [nape], cub_attrs: [187]}
+      - {text: "White central crown stripe between dark stripes", parts: [crown], cub_attrs: [104]}
+      - {text: "Orange-buff breast with thin streaks along the flanks", parts: [breast], cub_attrs: [120]}
+  S12:
+    name: Lincoln Sparrow
+    source: https://www.allaboutbirds.org/guide/Lincolns_Sparrow/id
+    key_part: breast
+    features:
+      - {text: "Crisp, fine black streaks on a buffy breast band", parts: [breast], cub_attrs: [57, 120]}
+      - {text: "Gray face and gray eyebrow with a buffy whisker stripe", parts: [crown], cub_attrs: [100, 96]}
+      - {text: "Brown crown with a gray central stripe", parts: [crown], cub_attrs: [104]}
+      - {text: "Clean whitish belly", parts: [breast], cub_attrs: [210]}
+  S13:
+    name: Nelson Sharp tailed Sparrow
+    source: https://www.allaboutbirds.org/guide/Nelsons_Sparrow/id
+    key_part: nape
+    features:
+      - {text: "Orange-buff triangle around a gray cheek patch", parts: [crown], cub_attrs: []}
+      - {text: "Gray nape and gray central crown stripe", parts: [nape, crown], cub_attrs: [188]}
+      - {text: "Blurry streaks on an orange-buff breast and flanks", parts: [breast], cub_attrs: [120]}
+      - {text: "White throat and white belly", parts: [throat], cub_attrs: [133]}
+  S14:
+    name: Savannah Sparrow
+    source: https://www.allaboutbirds.org/guide/Savannah_Sparrow/id
+    key_part: crown
+    features:
+      - {text: "Yellow eyebrow in front of and over the eye", parts: [crown], cub_attrs: [100]}
+      - {text: "Fine dark streaks on the white breast and flanks", parts: [breast], cub_attrs: [57, 118]}
+      - {text: "Pale central crown stripe", parts: [crown], cub_attrs: [104]}
+      - {text: "Small bill and short, notched tail", parts: [beak, tail], cub_attrs: [76]}
+  S15:
+    name: Song Sparrow
+    source: https://www.allaboutbirds.org/guide/Song_Sparrow/id
+    key_part: breast
+    features:
+      - {text: "Heavy brown streaks on the breast merging into a central spot", parts: [breast], cub_attrs: [57, 107]}
+      - {text: "Thick dark whisker (malar) stripe beside the white throat", parts: [throat], cub_attrs: [96]}
+      - {text: "Broad gray eyebrow and brown stripe behind the eye", parts: [crown], cub_attrs: [100]}
+      - {text: "Streaked brown back and long rounded tail", parts: [tail], cub_attrs: [239, 75]}
+  S16:
+    name: Tree Sparrow
+    source: https://www.allaboutbirds.org/guide/American_Tree_Sparrow/id
+    key_part: breast
+    features:
+      - {text: "Unstreaked gray breast with a dark central spot", parts: [breast], cub_attrs: [55, 111]}
+      - {text: "Bicolored bill: dark upper, yellow lower mandible", parts: [beak], cub_attrs: [285]}
+      - {text: "Rusty crown and rusty line behind the eye on a gray face", parts: [crown], cub_attrs: [298]}
+      - {text: "Two white wingbars on rusty wings", parts: [nape], cub_attrs: [312]}
+  S17:
+    name: Vesper Sparrow
+    source: https://www.allaboutbirds.org/guide/Vesper_Sparrow/id
+    key_part: tail
+    features:
+      - {text: "White outer tail feathers", parts: [tail], cub_attrs: [92]}
+      - {text: "Bold white eyering", parts: [crown], cub_attrs: [101]}
+      - {text: "Small chestnut patch at the bend of the wing", parts: [nape], cub_attrs: []}
+      - {text: "Finely streaked breast and dark-bordered ear patch", parts: [breast], cub_attrs: [57]}
+  S18:
+    name: White crowned Sparrow
+    source: https://www.allaboutbirds.org/guide/White-crowned_Sparrow/id
+    key_part: crown
+    features:
+      - {text: "Bold black-and-white stripes on the crown (brown-and-tan in immatures)", parts: [crown], cub_attrs: [104, 305, 306]}
+      - {text: "Plain, unstreaked gray breast and face", parts: [breast], cub_attrs: [55, 111]}
+      - {text: "Pink, orange or yellowish bill", parts: [beak], cub_attrs: [288, 289]}
+      - {text: "No white throat patch; the throat is gray", parts: [throat], cub_attrs: [126]}
+  S19:
+    name: White throated Sparrow
+    source: https://www.allaboutbirds.org/guide/White-throated_Sparrow/id
+    key_part: throat
+    features:
+      - {text: "Sharply outlined bright white throat patch", parts: [throat], cub_attrs: [133]}
+      - {text: "Yellow spot between the eye and the bill", parts: [crown], cub_attrs: []}
+      - {text: "Black-and-white or brown-and-tan striped crown", parts: [crown], cub_attrs: [104]}
+      - {text: "Dark gray bill and gray, lightly blurred breast", parts: [breast, beak], cub_attrs: [111]}
+  S20:
+    name: Bank Swallow
+    source: https://www.allaboutbirds.org/guide/Bank_Swallow/id
+    key_part: breast
+    features:
+      - {text: "Distinct brown band across a white breast", parts: [breast], cub_attrs: [107, 58]}
+      - {text: "Plain brown upperparts and white throat", parts: [throat, nape], cub_attrs: [133, 60]}
+      - {text: "Tiny bill and long, pointed wings", parts: [beak], cub_attrs: [214]}
+      - {text: "Slightly notched tail", parts: [tail], cub_attrs: [76]}

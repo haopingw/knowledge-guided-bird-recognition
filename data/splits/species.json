@@ -1,0 +1,207 @@
+{
+  "rule": "Choose the 20 similar species and build dev / val / test splits.\n\nSelection rule (uses official TRAINING images only, decided before any model run):\n  1. For each of the 200 classes, average the image-level attribute vectors\n     (only annotations with certainty >= 3, i.e. \"probably\"/\"definitely\").\n  2. Start from the three Figure-1 seed species.\n  3. Greedily add the class with the highest mean cosine similarity to the\n     classes already selected, until 20 classes are chosen.\nSplits: official train images of each class -> 80% dev / 20% val (seed 0);\nofficial test images -> test (final evaluation only).",
+  "selection_order": [
+    {
+      "class_id": 116,
+      "name": "Chipping Sparrow",
+      "mean_cos_to_set": NaN
+    },
+    {
+      "class_id": 132,
+      "name": "White crowned Sparrow",
+      "mean_cos_to_set": NaN
+    },
+    {
+      "class_id": 129,
+      "name": "Song Sparrow",
+      "mean_cos_to_set": NaN
+    },
+    {
+      "class_id": 117,
+      "name": "Clay colored Sparrow",
+      "mean_cos_to_set": 0.8904967046351612
+    },
+    {
+      "class_id": 131,
+      "name": "Vesper Sparrow",
+      "mean_cos_to_set": 0.8976391767755987
+    },
+    {
+      "class_id": 115,
+      "name": "Brewer Sparrow",
+      "mean_cos_to_set": 0.9011554073993766
+    },
+    {
+      "class_id": 113,
+      "name": "Baird Sparrow",
+      "mean_cos_to_set": 0.8915623335922357
+    },
+    {
+      "class_id": 121,
+      "name": "Grasshopper Sparrow",
+      "mean_cos_to_set": 0.8900913218287163
+    },
+    {
+      "class_id": 119,
+      "name": "Field Sparrow",
+      "mean_cos_to_set": 0.890502677967846
+    },
+    {
+      "class_id": 130,
+      "name": "Tree Sparrow",
+      "mean_cos_to_set": 0.8865463321158911
+    },
+    {
+      "class_id": 118,
+      "name": "House Sparrow",
+      "mean_cos_to_set": 0.8837113123685045
+    },
+    {
+      "class_id": 125,
+      "name": "Lincoln Sparrow",
+      "mean_cos_to_set": 0.8807644259927706
+    },
+    {
+      "class_id": 126,
+      "name": "Nelson Sharp tailed Sparrow",
+      "mean_cos_to_set": 0.8768010359020931
+    },
+    {
+      "class_id": 124,
+      "name": "Le Conte Sparrow",
+      "mean_cos_to_set": 0.8790157137742246
+    },
+    {
+      "class_id": 123,
+      "name": "Henslow Sparrow",
+      "mean_cos_to_set": 0.8750114809902441
+    },
+    {
+      "class_id": 127,
+      "name": "Savannah Sparrow",
+      "mean_cos_to_set": 0.8756755813039823
+    },
+    {
+      "class_id": 133,
+      "name": "White throated Sparrow",
+      "mean_cos_to_set": 0.8579985168406475
+    },
+    {
+      "class_id": 122,
+      "name": "Harris Sparrow",
+      "mean_cos_to_set": 0.8422379093475009
+    },
+    {
+      "class_id": 104,
+      "name": "American Pipit",
+      "mean_cos_to_set": 0.8351130373663438
+    },
+    {
+      "class_id": 135,
+      "name": "Bank Swallow",
+      "mean_cos_to_set": 0.8339520664721443
+    }
+  ],
+  "species": [
+    {
+      "sid": "S01",
+      "class_id": 104,
+      "name": "American Pipit"
+    },
+    {
+      "sid": "S02",
+      "class_id": 113,
+      "name": "Baird Sparrow"
+    },
+    {
+      "sid": "S03",
+      "class_id": 115,
+      "name": "Brewer Sparrow"
+    },
+    {
+      "sid": "S04",
+      "class_id": 116,
+      "name": "Chipping Sparrow"
+    },
+    {
+      "sid": "S05",
+      "class_id": 117,
+      "name": "Clay colored Sparrow"
+    },
+    {
+      "sid": "S06",
+      "class_id": 118,
+      "name": "House Sparrow"
+    },
+    {
+      "sid": "S07",
+      "class_id": 119,
+      "name": "Field Sparrow"
+    },
+    {
+      "sid": "S08",
+      "class_id": 121,
+      "name": "Grasshopper Sparrow"
+    },
+    {
+      "sid": "S09",
+      "class_id": 122,
+      "name": "Harris Sparrow"
+    },
+    {
+      "sid": "S10",
+      "class_id": 123,
+      "name": "Henslow Sparrow"
+    },
+    {
+      "sid": "S11",
+      "class_id": 124,
+      "name": "Le Conte Sparrow"
+    },
+    {
+      "sid": "S12",
+      "class_id": 125,
+      "name": "Lincoln Sparrow"
+    },
+    {
+      "sid": "S13",
+      "class_id": 126,
+      "name": "Nelson Sharp tailed Sparrow"
+    },
+    {
+      "sid": "S14",
+      "class_id": 127,
+      "name": "Savannah Sparrow"
+    },
+    {
+      "sid": "S15",
+      "class_id": 129,
+      "name": "Song Sparrow"
+    },
+    {
+      "sid": "S16",
+      "class_id": 130,
+      "name": "Tree Sparrow"
+    },
+    {
+      "sid": "S17",
+      "class_id": 131,
+      "name": "Vesper Sparrow"
+    },
+    {
+      "sid": "S18",
+      "class_id": 132,
+      "name": "White crowned Sparrow"
+    },
+    {
+      "sid": "S19",
+      "class_id": 133,
+      "name": "White throated Sparrow"
+    },
+    {
+      "sid": "S20",
+      "class_id": 135,
+      "name": "Bank Swallow"
+    }
+  ]
+}
