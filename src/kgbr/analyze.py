@@ -18,7 +18,8 @@ from PIL import Image, ImageDraw  # noqa: E402
 
 from .cub import load_cub  # noqa: E402
 from .knowledge import load_controls, load_species  # noqa: E402
-from .metrics import bootstrap_ci, load_raw, paired_bootstrap, per_image_scores, summarize  # noqa: E402
+from .metrics import (bootstrap_ci, load_raw, mean_per_class_acc, paired_bootstrap,  # noqa: E402
+                      per_image_scores, summarize)
 from .prompts import PARTS  # noqa: E402
 
 RES = Path("results")
@@ -29,7 +30,9 @@ COLORS = {"A": "#8c8c8c", "B": "#5b8db8", "C": "#2a9d55", "D": "#c9a227", "E": "
 
 
 def fmt(x, pct=True):
-    return f"{100 * x:.1f}" if pct else f"{x:.3f}"
+    if pct:
+        return f"{100 * x:.1f}"
+    return f"{x:.0f}" if abs(x) >= 100 else f"{x:.3f}"
 
 
 def table(rows: list[dict], cols: list[tuple[str, str, bool]]) -> str:
@@ -292,7 +295,16 @@ def full(main_tag="main", occ_tag="occlusion") -> None:
         occlusion(s, occ, out)
         out += ["![occlusion examples](figures/occlusion_examples.png)", ""]
     cases(s, out)
-    meta = json.loads(Path(f"results/raw/{main_tag}.meta.json").read_text())
+    probe_path = Path("results/probe/probe_results.json")
+    if probe_path.exists():
+        pr = json.loads(probe_path.read_text())
+        out += ["## 8. Supervised reference: linear probe (uses training labels)", "",
+                "Mean-pooled frozen Qwen3-VL vision features + logistic regression, trained on dev "
+                f"({pr['n_dev']} images), C chosen on val (best C = {pr['best_C']}), evaluated once on test. "
+                "**Not an equal-footing comparison** with the zero-shot prompting conditions above.", "",
+                f"**Test mean per-class accuracy: {100 * pr['test_mean_per_class_acc']:.1f}%** "
+                f"(vs. {100 * mean_per_class_acc(s[s.condition == 'A']):.1f}% for zero-shot condition A).", ""]
+    meta =json.loads(Path(f"results/raw/{main_tag}.meta.json").read_text())
     out += ["## Run metadata", "", "```json", json.dumps(meta, indent=2), "```"]
     (RES / "RESULTS.md").write_text("\n".join(out), encoding="utf-8")
     print("wrote results/RESULTS.md")

@@ -25,6 +25,22 @@ Every response is one JSON object: 6 part locations (0–1000 relative coords), 
 with class-stratified paired bootstrap CIs. An occlusion experiment masks each species' key part vs.
 an equal-area control region on 200 test images.
 
+## Key findings (test split, 585 images × 5 conditions; full tables in [`results/RESULTS.md`](results/RESULTS.md))
+
+![main results](results/figures/main_results.png)
+
+1. **Correct notes do not improve species accuracy.** A 35.0% → C 33.9% (Δ −1.2 pp, 95% CI [−3.4, +1.1]);
+   C is indistinguishable from length-matched irrelevant text (C − D = 0.0 pp). The generic checklist (B) is also null.
+2. **Notes do change the reported evidence.** Part localization improves with species notes
+   (PCK@0.1 +2.6 pp vs. A, +3.9 pp vs. D, both p < 0.001), but attribute macro-F1 *drops* (−3.6 pp) —
+   and D drops it by the same amount, so the attribute loss is a long-prompt effect, not a knowledge effect.
+3. **The model does read the notes.** Swapped notes (E) hurt accuracy significantly (E − A = −3.3 pp, p = 0.004;
+   C − E = +2.1 pp, p = 0.006), mostly on the swapped species. Wrong text is more harmful than right text is helpful.
+4. **Occlusion.** Masking the key part lowers accuracy more than masking a control region (A: 32.0 → 25.5% vs. 29.0%),
+   but since C gives no gain over A to begin with, there is no knowledge gain to remove (Δ_ctrl − Δ_key = +0.5 pp, CI [−4.0, +5.0]).
+5. **Supervised reference.** A linear probe on the *same frozen vision features* reaches **76.5%** —
+   the visual information is there; zero-shot prompting (35%) fails to use it, with or without notes.
+
 ## Repository layout
 
 ```

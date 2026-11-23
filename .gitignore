@@ -5,3 +5,6 @@ __pycache__/
 data/CUB_200_2011/
 *.tgz
 .env
+
+# regenerable probe feature cache
+results/probe/features.npz

@@ -125,6 +125,9 @@ def main(argv=None) -> None:
                        "parsed": parse_reply(r["raw"], names, attr_ids)}
                 f.write(json.dumps(rec) + "\n")
             f.flush()
+            # Release cached blocks each batch: on Windows (WDDM) an over-full VRAM pool
+            # spills into shared memory and generation can stall indefinitely.
+            torch.cuda.empty_cache()
     peak = torch.cuda.max_memory_allocated() / 1e9
     meta["peak_gpu_mem_gb"] = round(peak, 2)
     (RAW / f"{args.tag}.meta.json").write_text(json.dumps(meta, indent=2))
